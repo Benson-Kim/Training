@@ -1,0 +1,9 @@
+.hero{
+    vertical-align: 25px;
+
+}
+p img{
+    /* vertical-align: text-bottom; */
+    height: 50px;
+    width: 50px;
+}
