@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;900&display=swap');
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 10px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-image: linear-gradient(to top right, rgb(112, 84, 194), rgb(24, 185, 214));
+    color: #333;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+}
+
+.numbers {
+    display: flex;
+}
+
+.num-one {
+    height: 45px;
+    width: 22px;
+    margin-right: -5px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    transform: rotate(50deg);
+    z-index: 0;
+}
+
+.num-two {
+    z-index: 3;
+    height: 94px;
+    width: 22px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+}
+
+.o-one {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    border: 23px solid #fff;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    margin-left: -5px;
+    z-index: 2;
+}
+
+.o-two {
+    left: 100px;
+    height: 50px;
+    width: 50px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 23px solid #fff;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+
+.days,
+.challenge {
+    text-transform: uppercase;
+    font-family: 'Roboto Slab', serif;
+    color: #fff;
+}
+
+
+.days {
+    letter-spacing: 2px;
+    font-size: 72px;
+    font-weight: 900;
+}
+
+.challenge {
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}

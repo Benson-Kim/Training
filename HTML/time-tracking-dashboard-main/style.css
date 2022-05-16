@@ -1,0 +1,151 @@
+html,
+body {
+    height: 100%;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    padding: 10px;
+    background-color: hsl(226, 43%, 10%)
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+aside {
+    width: 15vw;
+    background-color: hsl(235, 46%, 20%);
+    border-radius: 10px;
+    align-content: stretch;
+    margin: 20px;
+}
+
+.profile {
+    color: hsl(236, 100%, 87%);
+    background-color: hsl(246, 80%, 60%);
+    padding: 20px;
+    height: 30vh;
+    border-radius: 10px;
+}
+
+.profile img {
+    height: 50px;
+    width: 50px;
+    border: 1px solid hsl(236, 100%, 87%);
+    border-radius: 50px;
+}
+
+.p-content {
+    color: hsl(235, 45%, 61%);
+    border-radius: 20px 20px 5px 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.profile h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+    color: hsl(236, 100%, 87%);
+    font-size: 28px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.p-content p span {
+    font-weight: 550;
+    color: hsl(236, 100%, 87%);
+}
+
+.activity {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+        "work play study"
+        "exercise social self-care";
+}
+
+.content {
+    background-color: hsl(235, 46%, 20%);
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.work {
+    grid-area: work;
+    background-color: hsl(15, 100%, 70%);
+    background-image: url('./images/icon-work.svg');
+}
+
+
+.play {
+    grid-area: play;
+    background-color: hsl(195, 74%, 62%);
+    background-image: url('./images/icon-play.svg');
+}
+
+.study {
+    grid-area: study;
+    background-color: hsl(348, 100%, 68%);
+    background-image: url('./images/icon-study.svg');
+}
+
+.exercise {
+    grid-area: exercise;
+    background-color: hsl(145, 58%, 55%);
+    background-image: url('./images/icon-exercise.svg');
+}
+
+.social {
+    grid-area: social;
+    background-color: hsl(264, 64%, 52%);
+    background-image: url('./images/icon-social.svg');
+}
+
+.self-care {
+    grid-area: self-care;
+    background-color: hsl(43, 84%, 65%);
+    background-image: url('./images/icon-self-care.svg');
+}
+
+.work,
+.play,
+.study,
+.exercise,
+.social,
+.self-care {
+    border-radius: 12px;
+    width: 12vw;
+    padding-top: 20px;
+    margin: 8px;
+    color: hsl(236, 100%, 87%);
+}
+
+div>h3 {
+    font-size: 12px;
+    font-weight: 550px;
+    text-transform: capitalize;
+}
+
+p>span {
+    font-size: 12px;
+    color: hsl(235, 45%, 61%);
+}
+
+#duration {
+    font-size: 20px;
+    color: hsl(236, 100%, 87%);
+}

@@ -1,0 +1,166 @@
+@import url('https: //fonts.google.com/specimen/Kumbh+Sans');
+
+* {
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    max-width: 1440px;
+    font-family: Verdana, Kumbh Sans, Tahoma, sans-serif;
+    color: hsl(219, 9%, 45%);
+}
+
+p{
+    font-size: 16px;
+}
+
+ul li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: hsl(219, 9%, 45%);
+}
+
+nav {
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid hsl(220, 14%, 75%);
+    line-height: 2;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.pages li a{
+    padding: 5px;
+}
+
+.account svg{
+    height: 24px;
+}
+.account img{
+    width: 30px;
+    height: 30px;
+}
+
+.product{
+    margin: 100px;
+    width: 70%;
+    display: flex;
+    justify-content: start;
+    /* overflow-x: hidden; */
+}
+
+
+.main-img img{
+    width: 40vw;
+    height: 60vh;
+    border-radius: 10px;
+
+}
+
+.extra-imgs{
+    display: flex;
+}
+
+.extra-imgs img{
+    margin: 30px 5px 30px 5px;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 10px;
+}
+
+.extra-imgs #active{
+    border: 2px solid hsl(26, 100%, 55%);
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+}
+.product-details h2{
+    color: hsl(26, 100%, 55%);
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.product-details h3{
+    font-size: 30px;
+    color: hsl(0, 0%, 0%);
+}
+
+.quantity{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: hsl(223, 64%, 98%);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.cart-details{
+    display: flex;
+}
+
+.quantity button{
+    border: none;
+    background-color: inherit;
+    color: hsl(26, 100%, 55%);
+    font-weight: bolder;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.quantity span{
+    font-weight: bolder;
+    color: hsl(0, 0%, 0%);
+}
+#price{
+    font-size: 20px;
+    font-weight: bold;
+    color: hsl(0, 0%, 0%);
+}
+
+#old-price{
+    text-decoration: line-through;
+}
+
+.cart-btn {
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: hsl(223, 64%, 98%);
+    font-size: 18px;
+    font-weight: 600;
+    background-color: hsl(26, 100%, 55%);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+}
+
+.price-container p span{
+        background-color: hsl(223, 64%, 98%);
+        color: hsl(26, 100%, 55%);
+        font-size: 14px;
+        padding: 5px;
+        font-weight: bold;
+}
