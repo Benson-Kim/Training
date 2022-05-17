@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Vollkorn:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'EB Garamond', serif;
+}
+
+ul li {
+    list-style: none;
+}
+
+.container {
+    display: flex;
+    margin: 30px;
+}
+
+aside {
+    background-color: rgb(50, 77, 200);
+    width: 350px;
+    margin: 20px 8px 20px 20px;
+    border-radius: 20px;
+    height: fit-content;
+        border-right: 2px solid rgb(183, 194, 203);
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    background-color: #E4405F;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.profile span {
+    font-size: 24px;
+    font-family: 'EB Garamond', serif;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+aside ul {
+    padding: 15px;
+    background-color: rgb(50, 77, 200);
+    border-radius: 20px;
+    border-left: 2px solid rgb(183, 194, 203);
+}
+
+.profile p {
+    text-transform: capitalize;
+    font-size: 18px;
+    color: #ffffff;
+    padding: 10px;
+
+}
+
+.profile img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.social ul {
+    display: inline-flex;
+    list-style: none;
+}
+
+aside ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Vollkorn', sans-serif;
+
+}
+
+aside .social {
+    width: 100%;
+}
+
+aside .fa-solid {
+    color: black;
+}
+
+.fa-regular{
+    width: 40px;
+    height: 40px;
+    color: #CD201F;
+    font-size: 20px;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+            margin: 10px;
+            transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.fa-solid,
+.icon {
+    position: relative;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.social ul .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social ul .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social ul .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.social ul .icon:hover span,
+.social ul .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.social ul .facebook:hover,
+.social ul .facebook:hover .tooltip,
+.social ul .facebook:hover .tooltip::before {
+    background: #1877F2;
+    color: #ffffff;
+}
+
+.social ul .twitter:hover,
+.social ul .twitter:hover .tooltip,
+.social ul .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #ffffff;
+}
+
+.social ul .instagram:hover,
+.social ul .instagram:hover .tooltip,
+.social ul .instagram:hover .tooltip::before {
+    background: #E4405F;
+    color: #ffffff;
+}
+
+.social ul .github:hover,
+.social ul .github:hover .tooltip,
+.social ul .github:hover .tooltip::before {
+    background: #333333;
+    color: #ffffff;
+}
+
+.social ul .youtube:hover,
+.social ul .youtube:hover .tooltip,
+.social ul .youtube:hover .tooltip::before {
+    background: #CD201F;
+    color: #ffffff;
+}
+
+section {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 800px;
+    margin: 20px;
+    padding: 40px;
+}
+
+section h1 {
+    font-family: 'Vollkorn', sans-serif;
+    font-size: 20px;
+    text-decoration: underline;
+    margin-bottom: 12px;
+}
+
+#about {
+    display: flex;
+}
+
+#about .img-wrapper {
+    width: 160px;
+    margin-right: 50px;
+}
+
+#about img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#about .content-wrapper var {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    padding-bottom: 30px;
+}
+
+#about .content-wrapper #abt-text {
+    color: rgb(90, 92, 95);
+    font-family: 'Vollkorn', sans-serif;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#about .content-wrapper .details {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.details #name span,
+.details #location span,
+.details #bod span,
+.details #email span {
+    color: rgb(90, 92, 95);
+    font-size: 18px;
+}
+
+.details #name p,
+.details #location p,
+.details #bod p,
+.details #email p {
+    color: black;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.details #name,
+.details #location,
+.details #bod,
+.details #email {
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+}
+
+form {
+    display: flex;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.address {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.address ul li {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.address li p {
+    color: black;
+    font-size: 18px;
+    /* font-weight: bold; */
+    font-family: 'EB Garamond', serif;
+}
+
+.address .social{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.address .social ul li{
+    margin-top: 40px;
+    padding: 10px;
+}
+
+li span {
+    font-family: 'Vollkorn', sans-serif;
+    color: rgb(90, 92, 95);
+        font-weight: 300;
+}
+
+.form-details {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+
+.form-details .input {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+}
+
+.input input {
+    width: 240px;
+}
+.form-details button{
+    width: 40%;
+    justify-content: flex-end;
+    align-self: flex-end;
+}
+.form-details input,
+.form-details textarea {
+    border-radius: 20px;
+    padding: 15px;
+    margin: 12px;
+    border: 1px solid rgb(183, 194, 203);
+    font-family: 'Vollkorn', sans-serif;
+    font-size: 14px;
+}
+.form-details #red,
+.form-details .fa-regular
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: normal;
+}
+button {
+    align-items: center;
+    border: 1px solid rgb(183, 194, 203);
+    display: inline-flex;
+    background-color: #E4405F;
+    font-family: 'Vollkorn', sans-serif;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons #red,
+.buttons #blue {
+    align-items: center;
+        border: 1px solid rgb(183, 194, 203);
+        display: inline-flex;
+        background-color: #E4405F;
+        font-family: 'Vollkorn', sans-serif;
+        cursor: pointer;
+        border-radius: 20px;
+    width: 180px;
+    padding-right: 14px;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+}
+
+.buttons #red {
+    background-color: #E4405F;
+}
+
+.buttons #blue {
+    background-color: rgb(50, 200, 50);
+    margin-left: 40px;
+}
+
+table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 15px;
+}
+
+table * {
+    position: relative;
+}
+
+table td,
+table th {
+    padding-left: 8px;
+}
+
+table thead tr {
+    height: 50px;
+    background: rgb(50, 77, 200);
+    font-size: 16px;
+    color: #ffffff;
+}
+
+table tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #E3F1D5;
+}
+
+table tbody tr:last-child {
+    border: 0;
+}
+
+table td,
+table th {
+    text-align: left;
+}
+
+table td.l,
+table th.l {
+    text-align: right;
+}
+
+table td.c,
+table th.c {
+    text-align: center;
+}
+
+table td.r,
+table th.r {
+    text-align: center;
+}
+
+@media screen and (max-width: 35.5em) {
+    table {
+        display: block;
+    }
+
+    table>*,
+    table tr,
+    table td,
+    table th {
+        display: block;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tbody tr {
+        height: auto;
+        padding: 8px 0;
+    }
+
+    table tbody tr td {
+        padding-left: 45%;
+        margin-bottom: 12px;
+    }
+
+    table tbody tr td:last-child {
+        margin-bottom: 0;
+    }
+
+    table tbody tr td:before {
+        position: absolute;
+        font-weight: 700;
+        width: 40%;
+        left: 10px;
+        top: 0;
+    }
+
+    table tbody tr td:nth-child(1):before {
+        content: "Code";
+    }
+
+    table tbody tr td:nth-child(2):before {
+        content: "Stock";
+    }
+
+    table tbody tr td:nth-child(3):before {
+        content: "Cap";
+    }
+
+    table tbody tr td:nth-child(4):before {
+        content: "Inch";
+    }
+
+    table tbody tr td:nth-child(5):before {
+        content: "Box Type";
+    }
+}
+
+#achievements .wrapper{
+    background-color: rgb(50, 77, 200);
+    display: flex;
+    justify-content: space-around;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#achievements  .wrapper .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+#achievements  .wrapper .content .fa-solid {
+    width: 50px;
+    height: 50px;
+    background-color: #CD201F;
+}
+
+#achievements .content p {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+#services .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    width: 210px;
+    border: 1px solid rgb(229, 236, 241);
+    border-radius: 18px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card .fa-solid {
+    width: 50px;
+    height: 50px;
+    background-color: none;
+    color: #CD201F;
+    padding: 2px;
+}
+
+.card h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.card p {
+    font-family: 'Vollkorn', sans-serif;
+    font-size: 16px;
+    color: rgb(90, 92, 95);
+    padding: 10px;
+    letter-spacing: 1;
+}
+
+.card:hover{
+    background-color: #E4405F;
+    color: #ffffff;
+}
