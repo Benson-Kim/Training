@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./theme-one.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calc-top">
+            <h1>calc</h1>
+            <h3>THEME</h3>
+            <div class="themes">
+                <div class="input">
+                    <input onclick="themeSwitcher('theme-one.css')" id="theme_one" type="radio" name="theme" value="0" checked>
+                    <label for="theme_one">1</label>
+            
+                    <input onclick="themeSwitcher('./theme-two.css', 0);" id="theme_two" type="radio" value="1" name="theme">
+                    <label for="theme_two">2</label>
+            
+                    <input onclick="themeSwitcher('./theme-three.css', 0);" id="theme_three" type="radio" value="2" name="theme">
+                    <label for="theme_three">3</label>
+                </div>
+            </div>
+        </div>
+        <input type="text" id="result">
+        <div class="calc-keys">
+            <button onclick="calculate('7')" >7</button>
+            <button onclick="calculate('8')" >8</button>
+            <button onclick="calculate('9')" >9</button>
+            <button onclick="del()" >DEL</button>
+            <button onclick="calculate('4')" >4</button>
+            <button onclick="calculate('5')" >5</button>
+            <button onclick="calculate('6')" >6</button>
+            <button onclick="calculate('+')" >+</button>
+            <button onclick="calculate('1')" >1</button>
+            <button onclick="calculate('2')" >2</button>
+            <button onclick="calculate('3')" >3</button>
+            <button onclick="calculate('-')" >-</button>
+            <button onclick="calculate('.')" >.</button>
+            <button onclick="calculate('0')" >0</button>
+            <button onclick="calculate('/')" >/</button>
+            <button onclick="calculate('x')" >x</button>
+            <button onclick="reset()" >RESET</button>
+            <button onclick="answer()" >=</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
