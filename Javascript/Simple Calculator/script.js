@@ -4,24 +4,32 @@ function themeSwitcher(value) {
     sheets[0].href = value;
 }
 
-const result = document.getElementById('result')
+const display = document.getElementById('result')
+const answer = document.getElementById('answer')
+const erase = document.getElementById('erase')
+const reset = document.getElementById('reset')
+const btns = document.querySelectorAll('.btn')
 
-let calculate = (number) => {
-    result.value += number;
-}
+btns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        display.value += btn.value
+    })
+})
 
-let answer = () => {
+reset.addEventListener('click', () => {
+    display.value = ''
+})
+
+erase.addEventListener('click', () => {
+    display.value = display.value.slice(0, -1);
+})
+
+
+answer.addEventListener('click', () => {
     try {
-        result.value = eval(result.value)
+        display.value = eval(display.value)
     } catch (error) {
-        alert("Enter valid input")
+        display.value = 'ERR:SYNTAX'
     }
-}
+})
 
-function reset() {
-    result.value = "";
-}
-
-let del = () => {
-    result.value = result.value.slice(0, -1);
-}
