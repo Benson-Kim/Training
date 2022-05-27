@@ -29,6 +29,7 @@ a {
 .checkbox{
     display: none;
 }
+
 nav {
     padding-bottom: 10px;
     border-bottom: 1.5px solid hsl(220, 14%, 75%);
@@ -171,7 +172,9 @@ nav {
     font-weight: bold;
 }
 
-@media (max-width:468px) {
+
+
+@media (max-width:414px) {
     .product {
         width: 100%;
         flex-direction: column;
@@ -184,6 +187,7 @@ nav {
         max-width: 100%;
         height: auto;
     }
+
 
     .extra-imgs {
         display: none;
@@ -225,4 +229,8 @@ nav {
         width: 340px;
     }
 
+}
+
+@media (max-width: 768px) {
+    
 }

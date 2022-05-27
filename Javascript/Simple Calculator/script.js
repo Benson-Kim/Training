@@ -4,7 +4,7 @@ function themeSwitcher(value) {
     sheets[0].href = value;
 }
 
-const display = document.getElementById('result')
+const display = document.getElementById('display')
 const answer = document.getElementById('answer')
 const erase = document.getElementById('erase')
 const reset = document.getElementById('reset')
