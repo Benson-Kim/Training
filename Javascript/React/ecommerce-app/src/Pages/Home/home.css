@@ -1,0 +1,24 @@
+.btn {
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1em;
+    text-transform: uppercase;
+    font-weight: small;
+}
+
+.btn-primary {
+    color: #fff;
+    background: #cc5801;
+}
+
+.btn-primary:hover {
+    background: #ed7117;
+    color: wheat;
+    transition: background 0.3s ease-in-out;
+}
+
+
