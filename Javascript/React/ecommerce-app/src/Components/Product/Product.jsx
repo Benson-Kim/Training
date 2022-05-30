@@ -1,17 +1,28 @@
 import './product.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faArrowLeft, faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+
+import { useState, useContext } from "react"
+import { CartContext } from '../CartContext'
 
 <script src="https://kit.fontawesome.com/0a73bdd7d6.js" crossorigin="anonymous"></script>
 
 
 function Product() {
+    
+    const [cartItems, setCartItems] = useState(0)
+
+    const [cart, setCart] = useContext(CartContext)
+
+    const addToCart = () => {
+        // const item = { name: 'sneaker', price: 300}
+        setCart(curr => [...curr, cartItems]);
+    }
+
     return (
         <section className='product-container'>
             <article className="img-container">
                 <img className='product-image' src="https://ke.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/13/265543/1.jpg?4011" alt="" />
-                {/* <span className="arrow-left"> <FontAwesomeIcon icon={faArrowLeft} /> </span>
-                <span className="arrow-right"> <FontAwesomeIcon icon={faArrowRight} /> </span> */}
             </article>
             <article className="product-info">
                 <h6>sneaker company</h6>
@@ -31,11 +42,17 @@ function Product() {
                     </div>
                 </div>
                 <div className="quantity-container">
-                    <button className='quantity' id="quantity-minus">-</button>
-                    <span className="quantity-amount">0</span>
-                    <button className='quantity' id="quantity-add">+</button>
+                    <button className='quantity' id="quantity-minus"
+                        onClick={() => setCartItems(cartItems - 1)}
+                        disabled={cartItems <= 0}>-</button>
+
+                    <span className="quantity-amount">{cartItems}</span>
+
+                    <button className='quantity' id="quantity-add"
+                        onClick={() => setCartItems(cartItems + 1)} >+</button>
+
                 </div>
-                <button className="cart-container">
+                <button className="cart-container" onClick={()=>addToCart(cartItems)}>
                     <FontAwesomeIcon icon={faCartShopping} />
                     <span className="add-to-cart">Add to cart</span>
                 </button>
