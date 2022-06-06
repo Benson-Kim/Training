@@ -1,6 +1,8 @@
 import React from "react";
 
 export default function Navbar() {
+
+ 
   return (
     <header className="flex justify-between items-center px-4 bg-slate-800 text-white">
       <div className="p-navbar-item">
@@ -213,6 +215,9 @@ export default function Navbar() {
               Contact Us
             </a>
           </li>
+          <li>
+            <a href="" className="p-navbar-item">Product</a>
+          </li>
         </ul>
       </nav>
       <nav className="hidden md:block">
@@ -231,7 +236,7 @@ export default function Navbar() {
             </a>
           </li>
           <li className="relative">
-            <a href="#" className="flex items-center p-navbar-item">
+            <a href="#" className='{isOpen ? "" : "hidden"} flex items-center p-navbar-item'>
               My Account
               <svg
                 xmlns="http://www.w3.org/2000/svg"

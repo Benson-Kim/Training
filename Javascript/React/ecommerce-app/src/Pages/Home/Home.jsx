@@ -5,12 +5,12 @@ import Men from '../Fashion/Men'
 import Women from '../Fashion/Women'
 
 
-function Home() {
+function Home({ productItems, addToCart, CartItem, shopItems }) {
     return (
         <div>
             <About />
-            <Men />
-            <Women />
+            <Men shopItems={shopItems} addToCart={addToCart} />
+            <Women shopItems={shopItems} addToCart={addToCart} />
             <Contact />
         </div>
     )

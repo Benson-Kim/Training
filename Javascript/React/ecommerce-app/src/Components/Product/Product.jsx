@@ -1,23 +1,11 @@
 import './product.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
-
-import { useState, useContext } from "react"
-import { CartContext } from '../CartContext'
+import { faCartShopping, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 <script src="https://kit.fontawesome.com/0a73bdd7d6.js" crossorigin="anonymous"></script>
 
 
-function Product() {
-    
-    const [cartItems, setCartItems] = useState(0)
-
-    const [cart, setCart] = useContext(CartContext)
-
-    const addToCart = () => {
-        // const item = { name: 'sneaker', price: 300}
-        setCart(curr => [...curr, cartItems]);
-    }
+function Product(props) {
 
     return (
         <section className='product-container'>
@@ -26,7 +14,7 @@ function Product() {
             </article>
             <article className="product-info">
                 <h6>sneaker company</h6>
-                <h4>fall limited edition sneakers</h4>
+                <h4>{props.product.name}</h4>
                 <p className="product-description">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Obcaecati aspernatur reprehenderit asperiores ut dolorum at.
@@ -43,16 +31,21 @@ function Product() {
                 </div>
                 <div className="quantity-container">
                     <button className='quantity' id="quantity-minus"
-                        onClick={() => setCartItems(cartItems - 1)}
-                        disabled={cartItems <= 0}>-</button>
+                        onClick={props.itemsub}
+                        disabled={props.units <= 0}
+                    >
+                        <FontAwesomeIcon className='medium' icon={faMinus} />
+                    </button>
 
-                    <span className="quantity-amount">{cartItems}</span>
+                    <span className="quantity-amount">{props.units}</span>
 
                     <button className='quantity' id="quantity-add"
-                        onClick={() => setCartItems(cartItems + 1)} >+</button>
+                        onClick={props.itemadd} >
+                        <FontAwesomeIcon className='medium' icon={faPlus} />
+                        </button>
 
                 </div>
-                <button className="cart-container" onClick={()=>addToCart(cartItems)}>
+                <button className="cart-container" onClick={props.onAdd(props.product)}>
                     <FontAwesomeIcon icon={faCartShopping} />
                     <span className="add-to-cart">Add to cart</span>
                 </button>

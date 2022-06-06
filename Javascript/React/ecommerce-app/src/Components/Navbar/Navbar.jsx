@@ -2,16 +2,12 @@ import "./navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { CartContext } from "../CartContext";
 
 <script
-  src="https://kit.fontawesome.com/0a73bdd7d6.js"
-  crossorigin="anonymous"
-></script>;
+  src="https://kit.fontawesome.com/0a73bdd7d6.js" crossorigin="anonymous"></script>;
 
-function Navbar() {
-  const [cart, setCart] = useContext(CartContext)
+function Navbar({CartItem}) {
+
   return (
     <nav class="navbar">
       <div class="navbar-container container">
@@ -41,11 +37,13 @@ function Navbar() {
         <h1 class="logo">sneakers</h1>
         <div className="right">
           <div className="cart-top">
-            <a href="#">
+            <Link to="/cart">
               <FontAwesomeIcon icon={faCartShopping} />
-              <span className="cart-items">{ cart.length}</span>
-            </a>
+              {/* <span className="cart-items">  {props.units}</span> */}
+              <span className="cart-items"> {CartItem.length === 0 ? "" : CartItem.length}</span>
+            </Link>
           </div>
+
           <div className="account">
             <a href="#">
               <img

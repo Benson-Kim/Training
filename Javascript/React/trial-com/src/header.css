@@ -1,0 +1,26 @@
+.d_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    padding: 20px;
+    box-shadow: 0 3px 1px gray;
+}
+
+.middle {
+    gap: 20px;
+}
+
+.right {
+    gap: 10px;
+}
+.right .cart {
+    cursor: pointer;
+}
+.account img {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+}

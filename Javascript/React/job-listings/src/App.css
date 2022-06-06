@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+
+:root {
+  --desaturated-dark-cyan: hsl(180, 29%, 50%);
+  --white: #fff;
+  --light-grayish-cyan-background: hsl(180, 52%, 96%);
+  --light-grayish-cyan-filter-tablets: hsl(180, 31%, 95%);
+  --dark-grayish-cyan: hsl(180, 8%, 52%);
+  --Very-dark-grayish-cyan: hsl(180, 14%, 20%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 17px;
+  font-family: 'League Spartan', sans-serif;
+  background-color: var(--light-grayish-cyan-background);
+}
+
+button {
+  border: none;
+}
+
+.dc_flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.dr_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clear-container{
+  display: flex;
+  padding: 20px;
+  margin: 40px 70px 0px ;
+  border-radius: 10px;
+  justify-content: space-between;
+  background-color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.24) 0px 1px 2px 0px;
+}
+
+.container {
+  display: flex;
+  padding: 20px;
+  margin: 40px 70px;
+  border-radius: 10px;
+  justify-content: space-between;
+  background-color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.24) 0px 1px 2px 0px;
+}
+
+.clear {
+  display: flex;
+}
+
+.userimg img {
+  width: 70px;
+  height: 70px;
+  margin-right: 12px;
+}
+
+.user-details {
+  gap: 10px;
+}
+
+.top button {
+  padding: 5px 6px;
+  border-radius: 6px;
+  border: none;
+  text-transform: uppercase;
+  background-color: var(--desaturated-dark-cyan);
+  color: var(--white);
+  font-weight: 500;
+  margin: 0 8px;
+}
+
+.top :nth-child(1) {
+  color: var(--desaturated-dark-cyan);
+}
+
+.top :nth-child(3) {
+  background-color: var(--Very-dark-grayish-cyan);
+}
+
+.extras {
+  color: var(--dark-grayish-cyan);
+  gap: 12px;
+  align-items: center;
+}
+
+.skill {
+  padding: 8px 10px;
+  margin: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--desaturated-dark-cyan);
+  background-color: var(--light-grayish-cyan-background);
+}
+
+.skill:hover {
+  background-color: var(--desaturated-dark-cyan);
+  color: var(--white);
+}
+
+.user {
+  border-left: 12px solid var(--desaturated-dark-cyan);
+}
+
+.clearbtn button {
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 7px;
+  background-color: inherit;
+}
+
+.filter-btn {
+  background-color: var(--light-grayish-cyan-background);
+  color: var(--Very-dark-grayish-cyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 8px;
+  border-radius: 6px;
+  margin-left: 12px;
+}
+
+.filter-btn span {
+  font-weight: 700;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.filter-btn button {
+  background-color: var(--desaturated-dark-cyan);
+  color: var(--light-grayish-cyan-background);
+  font-size: 18px;
+  padding: 8px 6px 3px;
+  cursor: pointer;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.filter-btn button:hover {
+  background-color: var(--Very-dark-grayish-cyan);
+}

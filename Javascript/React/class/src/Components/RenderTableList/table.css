@@ -1,0 +1,191 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+body {
+    background: rgba(0, 0, 0, 0.9);
+    font-family: "Open Sans", sans-serif;
+}
+
+/* wrapper */
+.wrapper {
+    width: 100%;
+    margin: 20px auto 100px auto;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+    position: relative;
+}
+
+.row tr td {
+    margin-top: -20px;
+    font-size: 16px;
+    font-weight: normal;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.row tr th {
+    font-size: 16px;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+
+.title tr th {
+    padding: 15px 13px;
+}
+
+.row tr td {
+    padding: 10px;
+}
+
+/* rows */
+.row {
+    padding: 10px 0;
+    height: 75px;
+    font-size: 0;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.row:hover {
+    background-color: rgba(26, 26, 26, 0.9);
+    height: 75px;
+}
+
+.title {
+    padding: 25px 0 5px 0;
+    height: 45px;
+    font-size: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.title:hover {
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+/* row one - fadeIn */
+.row-fadeIn-wrapper {
+    opacity: 0;
+    font-size: 0;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.2s ease-out;
+    -webkit-animation: fadeIn 0.4s ease-out 2s 1 alternate;
+    animation: fadeIn 0.4s ease-out 2s 1 alternate;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.row-fadeIn-wrapper:hover {
+    height: 35px;
+}
+
+.fadeIn {
+    padding: 20px 0;
+    font-size: 0;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+    border-left: 3px solid #1c616c;
+}
+
+.fadeIn:hover {
+    background-color: rgba(26, 26, 26, 0.9);
+    border-left: 3px solid #4fc0d2;
+}
+
+/* more content */
+td.more-content td {
+    font-size: 14px;
+    margin: auto 35px;
+    color: rgba(128, 128, 128, 0.9);
+}
+
+.more-content td span {
+    color: rgba(255, 255, 255, 0.9);
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+/* keyframe animations */
+@-webkit-keyframes fadeIn {
+    from {
+        background: rgba(255, 255, 255, 0.1);
+        opacity: 0;
+        padding: 0;
+    }
+
+    to {
+        background: rgba(51, 51, 51, 0.1);
+        opacity: 1;
+        padding: 0 0 65px 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        background: rgba(255, 255, 255, 0.1);
+        opacity: 0;
+        padding: 0;
+    }
+
+    to {
+        background: rgba(51, 51, 51, 0.1);
+        opacity: 1;
+        padding: 0 0 65px 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .row:hover {
+        height: 85px;
+    }
+
+    .row-fadeIn-wrapper:hover {
+        height: 55px;
+    }
+
+    .title-hide {
+        display: none;
+    }
+
+    .more-content td {
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+
+    .row tr td,
+    .row tr th {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+
+    .row tr td,
+    .row tr th {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 359px) {
+    .row:hover {
+        height: 105px;
+    }
+
+    .row-fadeIn-wrapper:hover {
+        height: 75px;
+    }
+}

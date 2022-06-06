@@ -1,51 +1,63 @@
 import './appstyle.css'
 import data from '../src/users.json'
+import Table from './Components/RenderTableList/Table';
+// import Counter from './Components/useState/Counter';
+import { useEffect, useRef, useReducer } from 'react';
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'start':
+      return {...state, isRunning:true}
+    case 'stop':
+      return {...state, isRunning:false}
+    case 'reset':
+      return { isRunning: false, time: 0 }
+    case 'tick':
+      return{...state, time: state.time+1}
+    default:
+      throw new Error();
+  }
+}
 
 function App() {
+
+  // const [count, setCount] = useState(0)
+
+  // const counterInc = () => {
+  //   setCount(count + 1)
+  // }
+  // const counterDecr = () => {
+  //   setCount(count - 1)
+  // }
+
+  const initialstate = {
+    isRunning: false,
+    time: 0
+  };
+
+
+  const [state, dispatch] = useReducer(reducer, initialstate)
+  const idRef = useRef(0);
+  useEffect(() => {
+    if (!state.isRunning) {
+      return;
+    }
+    idRef.current = setInterval(() => dispatch({ type: 'tick' }), 1000);
+    return () => {
+      clearInterval(idRef.current);
+      idRef.current = 0;
+    };
+  }, [state.isRunning]);
+
   return (
-    <table className="wrapper">
-      {/* <!-- Row title --> */}
-      <thead className="row title">
-        <tr>
-          <th width="4%">id</th>
-          <th width="10%">Name</th>
-          <th width="12%">username</th>
-          <th width="16%">email</th>
-          <th width="20%">address</th>
-          <th width="12%">phone</th>
-          <th width="12%">website</th>
-          <th width="12%">company</th>
-        </tr>
-      </thead>
-
-      {data.map(user => {
-        return (
-          <section className="row-fadeIn-wrapper">
-
-            <table className="row fadeIn">
-              <tr>
-                <td width="4%">{user.id}</td>
-                <td width="10%">  {user.name}  </td>
-                <td width="12%">  {user.username} </td>
-                <td width="18%">  {user.email}  </td>
-                <td width="20%">{user.address.street + ', ' +user.address.suite +', ' +user.address.city }</td>
-                <td width="12%">  {user.phone}  </td>
-                <td width="12%">  {user.website} </td>
-                <td width="12%">  {user.company.name} </td>
-                <td className="more-content">
-                  <td>
-                    <span classNamemeta-info>Zipcode:</span>  {user.address.zipcode}
-                    <span className='meta-info'>Latitude:</span> {user.address.geo.lat}
-                    <span className='meta-info'>Longitude:</span> {user.address.geo.lng}
-                  </td>
-                </td>
-              </tr>
-            </table>
-
-          </section>
-        )
-      })}
-    </table>
+    <>
+      <button>{state.time}s</button>
+      <button onClick={()=>dispatch({type: 'start'})}>Start</button>
+      <button onClick={()=>dispatch({type: 'stop'})}>Stop</button>
+      <button onClick={()=>dispatch({type: 'reset'})}>Reset</button>
+      {/* <Table data={data} /> */}
+      {/* <Counter count={count} counterInc={counterInc} counterDecr={counterDecr} /> */}
+    </>
   )
 }
 

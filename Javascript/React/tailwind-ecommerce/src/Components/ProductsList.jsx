@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductSidebar from './ProductSidebar'
+import { Link } from "react-router-dom";
 
 const ProductList = () => {
     return (
@@ -20,11 +21,12 @@ const ProductList = () => {
                         <h2 className='text-slate-900'>KSh 1490</h2>
                         <span className='flex justify-between items-center' >
                             <h4 className='text-slate-600 mr-1 text-sm  text-decoration-line: line-through'>Ksh 2800</h4>
-                        <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>47%</span>
+                            <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>47%</span>
                         </span>
                     </div>
                     <button className='mb-2 bg-orange-600 w-full text-white font-semibold py-2 rounded-lg hover:bg-orange-500' >Add to cart</button>
                 </a>
+                
                 <a href="#" className="flex flex-col justify-between py-2 px-4 shadow-md rounded-lg hover:border-[1px] hover:border-slate-300 hover:rounded-md transition-all">
                     <img className='h-34 rounded-sm' src="https://ke.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/05/027043/1.jpg?1938" alt="" />
                     <p className='text-slate-700 font-semibold text-left text-sm pt-2' >Fashion Mens Running Breathable Sneakers</p>
@@ -32,7 +34,7 @@ const ProductList = () => {
                         <h2 className='text-slate-900'>KSh 899</h2>
                         <span className='flex justify-between items-center' >
                             <h4 className='text-slate-600 mr-1 text-sm  text-decoration-line: line-through'>Ksh 1099</h4>
-                        <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>18%</span>
+                            <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>18%</span>
                         </span>
                     </div>
                     <button className='mb-2 bg-orange-600 w-full text-white font-semibold py-2 rounded-lg hover:bg-orange-500' >Add to cart</button>
@@ -44,7 +46,7 @@ const ProductList = () => {
                         <h2 className='text-slate-900'>KSh 999</h2>
                         <span className='flex justify-between items-center' >
                             <h4 className='text-slate-600 mr-1 text-sm  text-decoration-line: line-through'>Ksh 1500</h4>
-                        <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>33%</span>
+                            <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>33%</span>
                         </span>
                     </div>
                     <button className='mb-2 bg-orange-600 w-full text-white font-semibold py-2 rounded-lg hover:bg-orange-500' >Add to cart</button>
@@ -56,7 +58,7 @@ const ProductList = () => {
                         <h2 className='text-slate-900'>KSh 1299</h2>
                         <span className='flex justify-between items-center' >
                             <h4 className='text-slate-600 mr-1 text-sm  text-decoration-line: line-through'>Ksh 2000</h4>
-                        <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>35%</span>
+                            <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>35%</span>
                         </span>
                     </div>
                     <button className='mb-2 bg-orange-600 w-full text-white font-semibold py-2 rounded-lg hover:bg-orange-500' >Add to cart</button>
@@ -68,7 +70,7 @@ const ProductList = () => {
                         <h2 className='text-slate-900'>KSh 1499</h2>
                         <span className='flex justify-between items-center' >
                             <h4 className='text-slate-600 mr-1 text-sm  text-decoration-line: line-through'>Ksh 2000</h4>
-                        <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>25%</span>
+                            <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>25%</span>
                         </span>
                     </div>
                     <button className='mb-2 bg-orange-600 w-full text-white font-semibold py-2 rounded-lg hover:bg-orange-500' >Add to cart</button>
@@ -80,7 +82,7 @@ const ProductList = () => {
                         <h2 className='text-slate-900'>KSh 2359</h2>
                         <span className='flex justify-between items-center' >
                             <h4 className='text-slate-600 mr-1 text-sm  text-decoration-line: line-through'>Ksh 2599</h4>
-                        <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>50%</span>
+                            <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>8%</span>
                         </span>
                     </div>
                     <button className='mb-2 bg-orange-600 w-full text-white font-semibold py-2 rounded-lg hover:bg-orange-500' >Add to cart</button>
@@ -92,7 +94,7 @@ const ProductList = () => {
                         <h2 className='text-slate-900'>KSh 2499</h2>
                         <span className='flex justify-between items-center' >
                             <h4 className='text-slate-600 mr-1 text-sm  text-decoration-line: line-through'>Ksh 2759</h4>
-                        <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>50%</span>
+                            <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>50%</span>
                         </span>
                     </div>
                     <button className='mb-2 bg-orange-600 w-full text-white font-semibold py-2 rounded-lg hover:bg-orange-500' >Add to cart</button>
@@ -104,7 +106,7 @@ const ProductList = () => {
                         <h2 className='text-slate-900'>KSh 2499</h2>
                         <span className='flex justify-between items-center' >
                             <h4 className='text-slate-600 mr-1 text-sm  text-decoration-line: line-through'>Ksh 2999</h4>
-                        <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>50%</span>
+                            <span className='text-orange-600 bg-orange-300 font-thin text-left text-sm px-[2px] py-[1px] rounded-lg'>50%</span>
                         </span>
                     </div>
                     <button className='mb-2 bg-orange-600 w-full text-white font-semibold py-2 rounded-lg hover:bg-orange-500' >Add to cart</button>
