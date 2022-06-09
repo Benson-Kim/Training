@@ -25,10 +25,9 @@ function App() {
     if (langFilter.length > 0)
       data = data.filter(skill => langFilter.every(lang => skill.languages.includes(lang)))
 
-    if (toolFilter.length > 0) {
+    if (toolFilter.length > 0) 
       data = data.filter(skill => toolFilter.every(tool => skill.tools.includes(tool)))
-    }
-
+    
     setFilteredData(data)
 
   }, [levelFilter, roleFilter, langFilter, toolFilter])
@@ -99,10 +98,10 @@ function App() {
               <User userdata={userdata}
                 setLevelFilter={setLevelFilter}
                 setRoleFilter={setRoleFilter}
-                langFilter={langFilter}
                 setlangFilter={setlangFilter}
-                toolFilter={toolFilter}
                 setToolFilter={setToolFilter}
+                langFilter={langFilter}
+                toolFilter={toolFilter}
               />
             </div>
 

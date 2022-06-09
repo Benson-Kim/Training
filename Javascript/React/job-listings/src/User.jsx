@@ -19,8 +19,8 @@ const User = ({ userdata, setLevelFilter, setRoleFilter, langFilter, setlangFilt
                 <div className="dc_flex user-details">
                     <div className="top">
                         <span>{company} </span>
-                        {featured && <button className='featured'>featured!</button>}
                         {userdata.new && <button className='new'>new !</button>}
+                        {featured && <button className='featured'>featured!</button>}
                     </div>
                     <span className="position">{position} </span>
                     <span className='extras' > {postedAt} . {contract} . {location}   </span>
