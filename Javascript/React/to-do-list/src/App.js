@@ -1,13 +1,11 @@
-import { ToDO } from "./ToDO";
+
 
 function App() {
   return (
-    <div className="antialiased bg-gray-100">
-      <ToDO />
-
-    </div>
+    <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
   );
 }
-
 
 export default App;
