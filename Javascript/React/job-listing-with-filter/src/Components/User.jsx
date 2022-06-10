@@ -1,6 +1,5 @@
 import React from "react"
 
-// const User = ({ userdata, setFilters, filters }) => {
 const User = ({ userdata, setLevelFilter, setRoleFilter, langFilter, setlangFilter, toolFilter, setToolFilter }) => {
 
     const {
@@ -20,12 +19,12 @@ const User = ({ userdata, setLevelFilter, setRoleFilter, langFilter, setlangFilt
                     <div className="flex gap-4 md:gap-2 items-center">
                         <h2 className="text-teal-600 font-semibold">{company} </h2>
                         <span className="flex gap-3">
-                            {userdata.new && <button className='uppercase rounded-full px-2 text-white font-semibold bg-teal-600'>new!</button>}
-                            {featured && <button className='uppercase rounded-full px-2 text-white font-semibold bg-slate-600'>featured!</button>}
+                            {userdata.new && <button className='uppercase rounded-full px-2 text-white bg-teal-600'>new!</button>}
+                            {featured && <button className='uppercase rounded-full px-2 text-white bg-slate-600'>featured!</button>}
                         </span>
                     </div>
                 </div>
-                
+
                 <span className="font-semibold text-slate-700">{position} </span>
                 <span className='flex gap-4 text-slate-500' > {postedAt} . {contract} . {location}   </span>
                 <hr className="md:hidden" />
