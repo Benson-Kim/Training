@@ -25,9 +25,9 @@ function App() {
     if (langFilter.length > 0)
       data = data.filter(skill => langFilter.every(lang => skill.languages.includes(lang)))
 
-    if (toolFilter.length > 0) 
+    if (toolFilter.length > 0)
       data = data.filter(skill => toolFilter.every(tool => skill.tools.includes(tool)))
-    
+
     setFilteredData(data)
 
   }, [levelFilter, roleFilter, langFilter, toolFilter])
@@ -41,9 +41,6 @@ function App() {
 
   return (
     <>
-      <header>
-        <img src="./bg-header-desktop.svg" alt="" />
-      </header>
       <div className="dc_flex">
 
         {
@@ -55,7 +52,6 @@ function App() {
                   levelFilter && (
                     <div className='filter-btn' >
                       <span>{levelFilter} </span>
-                      filterbtn()
                       <button><img src='./images/icon-remove.svg' alt="" onClick={() => setLevelFilter("")} /> </button>
                     </div>
                   )

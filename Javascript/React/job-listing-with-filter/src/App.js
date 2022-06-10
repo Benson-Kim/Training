@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import User from './User';
 import Data from './data.json'
 
@@ -25,9 +25,9 @@ function App() {
     if (langFilter.length > 0)
       data = data.filter(skill => langFilter.every(lang => skill.languages.includes(lang)))
 
-    if (toolFilter.length > 0) 
+    if (toolFilter.length > 0)
       data = data.filter(skill => toolFilter.every(tool => skill.tools.includes(tool)))
-    
+
     setFilteredData(data)
 
   }, [levelFilter, roleFilter, langFilter, toolFilter])
@@ -41,60 +41,56 @@ function App() {
 
   return (
     <>
-      <header>
-        <img src="./bg-header-desktop.svg" alt="" />
-      </header>
-      <div className="dc_flex">
-
+      
+      <div className="flex flex-col bg-teal-50 ">
         {
           levelFilter === "" && roleFilter === "" && langFilter.length === 0 && toolFilter.length === 0
             ? null :
 
-            <div className="clear-container">
-              <div class="clear">
+            <div className="flex py-5 px-2 mx-5 my-8 justify-between shadow-md rounded bg-white md:mx-20 md:px-8 transition-all duration-300">
+              <div class="flex flex-wrap gap-2">
                 {
                   levelFilter && (
-                    <div className='filter-btn' >
-                      <span>{levelFilter} </span>
-                      <button><img src='./images/icon-remove.svg' alt="" onClick={() => setLevelFilter("")} /> </button>
+                    <div className='bg-teal-50 text-teal-600 flex justify-center items-center pl-2 rounded-md ml-3 font-semibold' >
+                      <span className='mr-2'>{levelFilter} </span>
+                      <button className='cursor-pointer bg-cyan-800 text-cyan-100 text-lg p-2 rounded-r-lg hover:bg-teal-600'><img src='./images/icon-remove.svg' alt="" onClick={() => setLevelFilter("")} /> </button>
                     </div>
                   )
                 }
                 {
                   roleFilter && (
-                    <div className='filter-btn' >
-                      <span>{roleFilter} </span>
-                      <button><img src='./images/icon-remove.svg' alt="" onClick={() => setRoleFilter("")} /> </button>
+                    <div className='bg-teal-50 text-teal-600 flex justify-center items-center pl-2 rounded-md ml-3 font-semibold' >
+                      <span className='mr-2'>{roleFilter} </span>
+                      <button className='cursor-pointer bg-cyan-800 text-cyan-100 text-lg p-2 rounded-r-lg hover:bg-teal-600'><img src='./images/icon-remove.svg' alt="" onClick={() => setRoleFilter("")} /> </button>
                     </div>
                   )
                 }
                 {
                   langFilter.length > 0 && langFilter.map(lang => (
-                    <div className='filter-btn' >
-                      <span>{lang} </span>
-                      <button><img src='./images/icon-remove.svg' alt="" onClick={() => setlangFilter(langFilter.filter(l => l !== lang))} /> </button>
+                    <div className='bg-teal-50 text-teal-600 flex justify-center items-center pl-2 rounded-md ml-3 font-semibold' >
+                      <span className='mr-2'>{lang} </span>
+                      <button className='cursor-pointer bg-cyan-800 text-cyan-100 text-lg p-2 rounded-r-lg hover:bg-teal-600'><img src='./images/icon-remove.svg' alt="" onClick={() => setlangFilter(langFilter.filter(l => l !== lang))} /> </button>
                     </div>
                   ))
                 }
                 {
                   toolFilter.length > 0 && toolFilter.map(tool => (
-                    <div className='filter-btn' >
-                      <span>{tool} </span>
-                      <button><img src='./images/icon-remove.svg' alt="" onClick={() => setToolFilter(toolFilter.filter(t => t !== tool))} /> </button>
+                    <div className='bg-teal-50 text-teal-600 flex justify-center items-center pl-2 rounded-md ml-3 font-semibold' >
+                      <span className='mr-2'>{tool} </span>
+                      <button className='cursor-pointer bg-cyan-800 text-cyan-100 text-lg p-2 rounded-r-lg hover:bg-teal-600'><img src='./images/icon-remove.svg' alt="" onClick={() => setToolFilter(toolFilter.filter(t => t !== tool))} /> </button>
                     </div>
                   ))
                 }
               </div>
-              <div class="clearbtn">
-                <button onClick={() => clearFilters()} >Clear</button>
-              </div>
+
+              <button className='text-slate-700 font-semibold hover:text-teal-500 hover:underline' onClick={() => clearFilters()} >Clear</button>
 
             </div>
         }
 
         <div className=''>
           {filtereddata.map((userdata) => (
-            <div className="dr_flex container" key={userdata.id}>
+            <div className="" key={userdata.id}>
               <User userdata={userdata}
                 setLevelFilter={setLevelFilter}
                 setRoleFilter={setRoleFilter}
