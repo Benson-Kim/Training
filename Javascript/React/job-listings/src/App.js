@@ -49,13 +49,13 @@ function App() {
         {
           levelFilter === "" && roleFilter === "" && langFilter.length === 0 && toolFilter.length === 0
             ? null :
-
             <div className="clear-container">
               <div class="clear">
                 {
                   levelFilter && (
                     <div className='filter-btn' >
                       <span>{levelFilter} </span>
+                      filterbtn()
                       <button><img src='./images/icon-remove.svg' alt="" onClick={() => setLevelFilter("")} /> </button>
                     </div>
                   )
