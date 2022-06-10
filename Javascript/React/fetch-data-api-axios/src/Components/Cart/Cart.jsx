@@ -8,7 +8,7 @@ const Cart = ({ cart, setCart, size, handleCartChange, setShow }) => {
     const handlePrice = () => {
         let total = 0;
         cart.map((item) => (
-            total += item.amount * item.price
+            total += item.quantity * item.price
         ));
         setPrice(total)
     }
@@ -26,7 +26,7 @@ const Cart = ({ cart, setCart, size, handleCartChange, setShow }) => {
     return (
         <div className='flex flex-col md:flex-row shadow-sm p-3 m-3 w-full '>
             <CartDetails handleCartChange={handleCartChange} cart={cart} handleRemove={handleRemove} size={size} setShow={setShow}  />
-            <OrderSummary handleCartChange={handleCartChange} cart={cart} handleRemove={handleRemove} size={size} />
+            <OrderSummary handleCartChange={handleCartChange} cart={cart} handleRemove={handleRemove} size={size} price={price} />
         </div>
     )
 }

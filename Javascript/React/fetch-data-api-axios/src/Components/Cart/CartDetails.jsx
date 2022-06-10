@@ -1,7 +1,13 @@
 import React from 'react'
 
 const CartDetails = ({ cart, size, handleCartChange, handleRemove, setShow }) => {
+
+    function roundToTwo(num) {
+        return +(Math.round(num + "e+3") + "e-3");
+    }
+
     return (
+        <>
         <div className='flex-col w-max px-6 pt-3 pb-6 rounded-sm'>
             <div className='flex justify-between items-center capitalize font-bold text-slate-800'>
                 <h2 className=''>shopping cart</h2>
@@ -31,7 +37,7 @@ const CartDetails = ({ cart, size, handleCartChange, handleRemove, setShow }) =>
                         </article>
 
                         <div className='flex items-center col-span-2 ml-10 '>
-                            <button onClick={() => handleCartChange(item, -1)}>
+                            <button onClick={() => handleCartChange(item,-1)}>
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     className="h-5 w-6 cursor-pointer hover:text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M18 12H6" />
@@ -39,7 +45,7 @@ const CartDetails = ({ cart, size, handleCartChange, handleRemove, setShow }) =>
                             </button>
 
                             <button className='text-center text-sm border border-blue-50 w-10 py-4 bg-white rounded text-slate-500 font-semibold focus:outline-none '>
-                                {/* {item.amount} */}
+                                {item.quantity}
                             </button>
 
                             <button onClick={() => handleCartChange(item, 1)}>
@@ -49,7 +55,7 @@ const CartDetails = ({ cart, size, handleCartChange, handleRemove, setShow }) =>
                             </button>
                         </div>
                         <h2 className='text-slate-700 font-semibold text-sm mt-[25px] text-center ml-4'>${item.price}</h2>
-                        <h2 className='text-slate-700 font-semibold text-sm mt-[25px] text-center ml-4'>$88.00</h2>
+                        <h2 className='text-slate-700 font-semibold text-sm mt-[25px] text-center ml-4'>${roundToTwo(item.quantity * item.price)}</h2>
                         <button
                             onClick={() => handleRemove(item.id)}
                             className='text-slate-500 hover:text-orange-500 ml- text-right' >Remove</button>
@@ -64,7 +70,8 @@ const CartDetails = ({ cart, size, handleCartChange, handleRemove, setShow }) =>
                     <span className='ml-1' onClick={() => setShow(true)} >Continue Shopping</span>
                 </button>
             </div>
-        </div>
+            </div>
+        </>
     )
 }
 
