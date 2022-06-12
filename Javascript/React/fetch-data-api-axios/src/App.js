@@ -8,7 +8,7 @@ function App() {
 
   const [show, setShow] = useState(true)
   const [cart, setCart] = useState([])
-
+ 
   const handleAddToCart = (item) => {
     if (cart.indexOf(item) !== -1)
       return
