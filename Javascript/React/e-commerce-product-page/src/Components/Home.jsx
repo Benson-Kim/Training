@@ -9,6 +9,7 @@ const Home = () => {
   return (
     <>
       <Nav />
+      {/* <Products /> */}
       <Routes>
         <Route path='/cart' element={<Cart />} />
         <Route path='/account' element={<Useraccount />} />
