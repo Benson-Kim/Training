@@ -23,10 +23,14 @@ const Cart = ({ cart, setCart, size, handleCartChange, setShow }) => {
         handlePrice();
     }
 
+    function roundToTwo(num) {
+        return +(Math.round(num + "e+3") + "e-3");
+    }
+
     return (
         <div className='flex flex-col md:flex-row shadow-sm p-3 m-3 w-full '>
-            <CartDetails handleCartChange={handleCartChange} cart={cart} handleRemove={handleRemove} size={size} setShow={setShow}  />
-            <OrderSummary handleCartChange={handleCartChange} cart={cart} handleRemove={handleRemove} size={size} price={price} />
+            <CartDetails roundToTwo={roundToTwo} handleCartChange={handleCartChange} cart={cart} handleRemove={handleRemove} size={size} setShow={setShow}  />
+            <OrderSummary roundToTwo={roundToTwo} handleCartChange={handleCartChange} cart={cart} handleRemove={handleRemove} size={size} price={price} />
         </div>
     )
 }

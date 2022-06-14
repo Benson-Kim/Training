@@ -1,5 +1,6 @@
 import React from 'react'
-import {BsSearch, BsCart} from "react-icons/bs"
+import { Link } from 'react-router-dom'
+import { BsSearch, BsCart } from "react-icons/bs"
 
 const Navbar = ({ show, setShow, size }) => {
   return (
@@ -12,20 +13,20 @@ const Navbar = ({ show, setShow, size }) => {
         </button>
       </div>
       <div>
-        <button
-          onClick={()=>setShow(true)}
-          className='text-white font-bold text-lg px-2 py-1 rounded-lg'>Logo</button>
+        <Link to='products'
+          // onClick={() => setShow(true)}
+          className='text-white font-bold text-lg px-2 py-1 rounded-lg'>Logo</Link>
       </div>
-      <div className= "hidden sm:flex sm:items-center rounded-md  p-2 px-2.5 bg-lime-50">
+      <div className="hidden sm:flex sm:items-center rounded-md  p-2 px-2.5 bg-lime-50">
         <BsSearch className="text-gray-400 text-2xl block float-left cursor-pointer mr-2" />
         <input type={"search"} placeholder="Search" className="text-slate-900 bg-transparent w-full text-lg focus:outline-none" />
       </div>
-      <button
-        onClick={()=>setShow(!show)}
+      <Link to='cart'
+        // onClick={() => setShow(!show)}
         className='relative rounded shadow-md border-none text-white px-2 w-max ' >
         <BsCart className='text-2xl' />
         <h2 className='absolute top-0 -right-1 px-1 rounded-full bg-blue-400 text-sm'>{size}</h2>
-      </button>
+      </Link>
     </div>
   )
 }

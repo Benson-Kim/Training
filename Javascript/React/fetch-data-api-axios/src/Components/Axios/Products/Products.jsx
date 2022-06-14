@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 // import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 import Product from './Product'
 import Sidebar from './Sidebar'
@@ -56,6 +57,9 @@ const Products = ({ handleAddToCart }) => {
             <Sidebar categories={categories} handleFilter={handleFilter} />
 
             <div className='flex flex-col'>
+                <div className='mt-4 text-slate-400'>
+                    Home
+                </div>
                 <h2 className='bg-blue-400 py-1 my-4 mx-2 rounded text-center text-white'  >Products</h2>
 
                 <div className='grid grid-cols-2 gap-2 mx-5 md:grid-cols-3 lg:grid-cols-4'>

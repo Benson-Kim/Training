@@ -1,12 +1,8 @@
 import React from 'react'
 
-const CartDetails = ({ cart, size, handleCartChange, handleRemove, setShow }) => {
+const CartDetails = ({ roundToTwo, cart, size, handleCartChange, handleRemove, setShow }) => {
 
-    function roundToTwo(num) {
-        return +(Math.round(num + "e+3") + "e-3");
-    }
-
-    return (
+        return (
         <>
         <div className='flex-col w-max px-6 pt-3 pb-6 rounded-sm'>
             <div className='flex justify-between items-center capitalize font-bold text-slate-800'>

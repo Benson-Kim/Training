@@ -1,8 +1,8 @@
+import { useState } from "react";
+
 import Navbar from "./Components/Axios/Navbar";
 import Products from "./Components/Axios/Products/Products";
 import Cart from './Components/Cart/Cart'
-import { useState } from "react";
-// import Product from "./Components/Axios/Products/Product";
 
 function App() {
 
@@ -31,6 +31,7 @@ function App() {
     <>
       <Navbar show={show} setShow={setShow} size={cart.length} />
       <div className="bg-slate-50 h-screen flex">
+        
         {show ?
           <Products handleAddToCart={handleAddToCart} />
           :
