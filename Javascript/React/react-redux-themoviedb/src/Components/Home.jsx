@@ -1,51 +1,31 @@
-import React, { useEffect, useState } from 'react'
-// import { IoStar, IoStarHalf } from 'react-icons/io'
-import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs'
-import axios from 'axios'
-import Main from './Main'
-import Navbar from './Navbar'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-// const api_key = 'd6ca859e565544668ce9853ec7cf1104'
+import Navbar from './Navbar'
+import Sidebar from './Sidebar'
+import Movies from './Movies'
+import {searchMovie} from '../Features/Slices/genreSlice'
 
 const Home = () => {
+    const dispatch = useDispatch()
+    const movies = useSelector(state => state.movies)
+    
+    const searchurl = 'https://api.themoviedb.org/3/search/multi?api_key=d6ca859e565544668ce9853ec7cf1104&language=en-US&page=1&include_adult=false';
+   
+    useEffect(() => {
+        axios.get(searchurl)
+            .then(res => dispatch(searchMovie(res.data.results, serachtext)))
+    }, [movies])
 
-  const [movies, setMovies] = useState('')
-  const url = 'https://api.themoviedb.org/3/trending/movie/week?api_key=d6ca859e565544668ce9853ec7cf1104'
-
-  useEffect(() => {
-    axios.get(url)
-      .then(res => setMovies(res.data.results))
-  }, [])
-
-  const getStars = (rating) => {
-
-    // Round to nearest half
-    rating = Math.round(rating / 2);
-    let output = [];
-    // Append all the filled whole stars
-    for (var i = rating; i >= 1; i--)
-      output.push(<BsStarFill className='text-blue-700 ' /> );
-
-    // If there is a half a star, append it
-    if (i == .5) output.push(<BsStarHalf className='text-blue-700' />);
-
-    // Fill the empty stars
-    for (let i = (5 - rating); i >= 1; i--)
-      output.push(<BsStar className='text-blue-700' />);
-
-    return output
-
-  }
-
-
-
-  return (
-    <div>
-      <Navbar />
-
-      <Main movies={movies} getStars={getStars} />
-    </div>
-  )
+    return (
+        <div className='flex flex-col'>
+            <Navbar />
+            <div className='flex '>
+                <Sidebar className='bg-slate-600' />
+                <Movies />
+            </div>
+        </div>
+    )
 }
 
 export default Home

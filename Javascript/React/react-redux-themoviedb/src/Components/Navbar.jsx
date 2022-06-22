@@ -1,23 +1,78 @@
-import React from 'react'
-import { BsCameraVideo,BsSearch, BsGear } from 'react-icons/bs'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { DiVisualstudio } from "react-icons/di";
+import { BiSearchAlt2 } from "react-icons/bi";
+import { BsGear } from "react-icons/bs";
+import axios from "axios";
+import { getTrendingMovies } from "../Features/Slices/movieSlice";
+import { fetchMovieGenre } from "../Features/Slices/genreSlice";
+import { useDispatch } from "react-redux";
 
 const Navbar = () => {
-  return (
-      <div className='bg-indigo-400 flex items-center justify-between py-2 px-5'>
-          <div>
-              <BsCameraVideo className='text-3xl cursor-pointer text-indigo-50 hover:text-orange-300' />
-          </div>
-          <div className='flex items-center justify-between gap-3 bg-inherit text-lime-100'>
-              <BsSearch className='text-2xl' />
-              <input type="text" placeholder='Search...' className='bg-inherit placeholder:text-indigo-50 py-1 px-2 text-xl rounded border-b focus:outline-none' />
-          </div>
-          <div className='flex items-center justify-between gap-3'>
-              <BsGear className='text-2xl text-indigo-100 cursor-pointer hover:text-orange-300' />
-              <img src="https://images.pexels.com/photos/12250627/pexels-photo-12250627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=""
-              className='w-7 h-7 rounded-full cursor-pointer' />
-          </div>
-    </div>
-  )
-}
+  const [query, setQuery] = useState("");
 
-export default Navbar
+  const handleInputChange = (event) => {
+    const { value } = event.target;
+    setQuery(value);
+  };
+
+  const dispatch = useDispatch();
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+
+    try {
+      if (query) {
+        const url = `https://api.themoviedb.org/3/search/multi?api_key=d6ca859e565544668ce9853ec7cf1104&language=en-US&query=${query}&page=1`
+        const { data } = await axios.get(url);
+        console.log(data);
+        dispatch(getTrendingMovies(data.results));
+        dispatch(fetchMovieGenre(data.results));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return (
+    <nav className="bg-indigo-600 h-16 flex items-center justify-between pr-5">
+      <div className="flex items-center">
+        <Link
+          to=""
+          className="w-56 text-indigo-100 px-3 flex items-center gap-x-2 hover:text-indigo-50"
+        >
+          <DiVisualstudio className="text-2xl" />
+          <h2 className="text-xl uppercase font-semibold font-mono">
+            Media HD
+          </h2>
+        </Link>
+        <div className="flex items-center text-indigo-300">
+          <BiSearchAlt2 className="text-xl " />
+          <form onSubmit={handleSearch}>
+            <input
+              type="text"
+              onChange={handleInputChange}
+              value={query}
+              placeholder="Search ..."
+              className="text-indigo-300 border-none placeholder:text-indigo-300 focus:ring-0 focus:outline-none rounded py-1 px-2 bg-inherit"
+            />
+          </form>
+        </div>
+      </div>
+      <div className="flex items-center gap-x-4">
+        <Link to="/">
+          <BsGear className="text-indigo-300 text-xl hover:text-indigo-50" />
+        </Link>
+        <Link to="/">
+          <img
+            src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt=""
+            className="w-8 h-8 rounded-full"
+          />
+        </Link>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

@@ -1,30 +1,31 @@
+import React, { useEffect } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
-import { BsFillStarFill } from 'react-icons/bs'
+import { useDispatch, useSelector } from 'react-redux'
 
-const Movies = ({ movies, getStars }) => {
-    // console.log(movies);
+import { getTrendingMovies } from '../Features/Slices/movieSlice'
+import Movie from './Movie'
+// import { Link } from 'react-router-dom'
 
+const url = 'https://api.themoviedb.org/3/trending/movie/week?api_key=d6ca859e565544668ce9853ec7cf1104'
+const Movies = () => {
+    const dispatch = useDispatch();
+    const movies = useSelector(state => state.movies)
+
+    useEffect(() => {
+        axios.get(url)
+            .then(res => dispatch(getTrendingMovies(res.data.results)))
+    }, [])
+
+    console.log(movies);
     return (
-        <div className='bg-gray-900 grow'>
-            <h2 className='capitalize text-slate-100 text-lg m-3'>Trending</h2>
-            <div className='my-4 mx-8 grid grid-cols-3 gap-x-5 gap-y-8 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'>
-            {movies?movies.map((movie)=>(
-                <Link to='' key={movie.id} className='rounded bg-inherit flex flex-wrap flex-col'>
-                   {console.log(movie)}
-                    <img src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path} alt=""
-                        className='h-48 w-full rounded' />
-                    <div className='w-full text-sm py-2'>
-                        <p className='text-slate-200'>{movie.title}</p>
-                        <span className='flex justify-between items-center'>
-                            <p className='flex items-center gap-1 text-blue-700'>{getStars(movie.vote_average)}</p>
-                            {/* <p className='flex items-center gap-1 text-blue-700'><BsFillStarFill /><BsFillStarFill /><BsFillStarFill /><BsFillStarFill /><BsFillStarFill /></p> */}
-                            <h2 className='text-slate-200'>90 min</h2>
-                        </span>
-                    </div>
-                </Link>
-            )) : null }
-                
+        <div className='flex flex-col bg-neutral-800'>
+            <h1 className='h-5 text-slate-300 text-lg font-semibold font-mono m-5'>
+                Discover
+            </h1>
+            <div className=' grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5 mx-5 gap-x-3 gap-y-5 '>
+                {movies ? movies.map((movie) => (
+                    <Movie movie={movie} key={movie.id} />
+                )) : 'Loading'}
             </div>
         </div>
     )
