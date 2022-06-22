@@ -1,0 +1,3 @@
+export const SHOW_MOVIES = 'SHOW_MOVIES'
+export const SHOW_MOVIEDETAILS = 'SHOW_MOVIEDETAILS'
+export const SHOW_GENRES = 'SHOW_GENRES'
